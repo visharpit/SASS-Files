@@ -1,0 +1,102 @@
+@import 'variables';                //import examle
+@import 'mixin';
+
+//$color-blue: #FFFF00 ;           //variable example
+//$color-manue: #ff0000;
+
+h1{
+    color:$color-manue;
+    background-color: palevioletred;
+}
+p{
+    color:$color-manue;
+}
+a{
+    color:$color-manue;
+}
+div ul li a{
+    color:$color-manue;
+}
+
+/*@mixin commomproperty {                        //mixin example
+
+     color:$color-manue;
+}*/
+ 
+div{                                         //Nested example
+    ul{
+        background-color: #FFFF00;
+        @include  commomproperty;              
+        li{
+            list-style-type: none;
+            @include  commomproperty;                     
+            display: inline-block;
+            text-transform: uppercase;
+            a{
+                @include  commomproperty;
+                text-decoration: none;
+
+            }
+        }
+    }
+}
+
+.message{
+    padding: 10px;
+    border: 1px solid;
+    color: maroon;
+    margin: 10px;
+}
+
+.success{
+    @extend .message;               //extend example
+    border-color: darkmagenta;
+}
+.error{
+    @extend .message;
+    border-color: darkolivegreen;
+}
+.Worning{
+    @extend .message;
+    border-color: darkslategrey;
+}
+
+$val1: 5;         //operaters example
+$val2: 10;
+
+.myClass {
+    padding: $val1 + $val2 + px;
+}
+
+.myClass p{
+    font-size: $val1 + 5 + px;
+}
+.myClass button{
+    font-size: $val2 + 10 + px;
+}
+
+$side: left;       //interpolation
+$value: 100;
+.gap-left-#{$value}{
+    margin-left: 50px;
+}
+
+.gap-#{$side}-50{
+    margin-#{$side}: 50px;
+}
+
+@mixin gap($side, $value, $pro){           // create dynamic mixing using interpolation
+   #{$pro}-#{$side}: #{$value} + px;
+}
+
+/*.myClass2{
+@include gap(left, 100)
+}*/
+
+.myClass3{
+    @include gap(left, 70, padding)
+}
+
+.myClass4{
+    @include gap(right, 90, margin)
+}

@@ -1,0 +1,67 @@
+h1 {
+  color: #1100ff;
+  background-color: palevioletred; }
+
+p {
+  color: #1100ff; }
+
+a {
+  color: #1100ff; }
+
+div ul li a {
+  color: #1100ff; }
+
+/*@mixin commomproperty {                        //mixin example
+
+     color:$color-manue;
+}*/
+div ul {
+  background-color: #FFFF00;
+  color: #1100ff; }
+  div ul li {
+    list-style-type: none;
+    color: #1100ff;
+    display: inline-block;
+    text-transform: uppercase; }
+    div ul li a {
+      color: #1100ff;
+      text-decoration: none; }
+
+.message, .success, .error, .Worning {
+  padding: 10px;
+  border: 1px solid;
+  color: maroon;
+  margin: 10px; }
+
+.success {
+  border-color: darkmagenta; }
+
+.error {
+  border-color: darkolivegreen; }
+
+.Worning {
+  border-color: darkslategrey; }
+
+.myClass {
+  padding: 15px; }
+
+.myClass p {
+  font-size: 10px; }
+
+.myClass button {
+  font-size: 20px; }
+
+.gap-left-100 {
+  margin-left: 50px; }
+
+.gap-left-50 {
+  margin-left: 50px; }
+
+/*.myClass2{
+@include gap(left, 100)
+}*/
+.myClass3 {
+  padding-left: 70 + px; }
+
+.myClass4 {
+  margin-right: 90 + px; }
